@@ -1,0 +1,46 @@
+# Backend (SpringBoot / Maven)
+/backend/target/
+/backend/.mvn/
+/backend/mvnw
+/backend/mvnw.cmd
+/backend/*.class
+/backend/*.jar
+/backend/*.war
+/backend/*.ear
+/backend/.idea/
+/backend/*.iml
+/backend/*.ipr
+/backend/*.iws
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+
+# Frontend (Vue / Node)
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.vite/
+/frontend/.DS_Store
+/frontend/*.log
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/pnpm-debug.log*
+/frontend/.env.local
+/frontend/.env.*.local
+
+# IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
