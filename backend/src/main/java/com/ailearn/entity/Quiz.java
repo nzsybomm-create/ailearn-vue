@@ -1,10 +1,12 @@
 package com.ailearn.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -23,4 +25,7 @@ public class Quiz extends BaseEntity {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private Boolean isPublished;
+
+    @TableField(exist = false)
+    private List<Question> questions;
 }
