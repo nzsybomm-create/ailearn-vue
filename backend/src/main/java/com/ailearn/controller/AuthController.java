@@ -43,13 +43,13 @@ public class AuthController {
     }
 
     @PostMapping("/forgot-password")
-    public Result<Void> forgot(@Valid @RequestBody ForgotReq req) {
+    public Result<String> forgot(@Valid @RequestBody ForgotReq req) {
         authService.forgotPassword(req.email);
         return Result.success("若邮箱存在，重置链接已发送");
     }
 
     @PostMapping("/reset-password")
-    public Result<Void> reset(@Valid @RequestBody ResetReq req) {
+    public Result<String> reset(@Valid @RequestBody ResetReq req) {
         authService.resetPassword(req.token, req.password);
         return Result.success("密码已重置");
     }

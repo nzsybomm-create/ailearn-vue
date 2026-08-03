@@ -57,7 +57,7 @@ public class CommunityService {
         List<UserBadge> ub = userBadgeMapper.selectList(Wrappers.<UserBadge>lambdaQuery()
                 .eq(UserBadge::getUserId, userContext.getUserId()));
         if (ub.isEmpty()) return List.of();
-        return badgeMapper.selectByIds(ub.stream().map(UserBadge::getBadgeId).toList());
+        return badgeMapper.selectBatchIds(ub.stream().map(UserBadge::getBadgeId).toList());
     }
 
     public Testimonial createTestimonial(String content, Integer rating) {

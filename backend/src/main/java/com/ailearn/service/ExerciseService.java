@@ -88,7 +88,7 @@ public class ExerciseService {
         Exercise exercise = exerciseMapper.selectById(attempt.getExerciseId());
         List<ExerciseQuestion> eqs = exerciseQuestionMapper.selectList(
                 Wrappers.<ExerciseQuestion>lambdaQuery().eq(ExerciseQuestion::getExerciseId, attempt.getExerciseId()));
-        List<Question> questions = questionMapper.selectByIds(
+        List<Question> questions = questionMapper.selectBatchIds(
                 eqs.stream().map(ExerciseQuestion::getQuestionId).toList());
 
         int correct = 0;

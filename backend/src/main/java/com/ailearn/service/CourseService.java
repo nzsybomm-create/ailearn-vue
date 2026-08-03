@@ -116,7 +116,7 @@ public class CourseService {
             return List.of();
         }
         List<Long> ids = favorites.stream().map(Favorite::getCourseId).toList();
-        return courseMapper.selectByIds(ids);
+        return courseMapper.selectBatchIds(ids);
     }
 
     public void toggleFavorite(Long courseId) {
