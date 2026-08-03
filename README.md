@@ -39,7 +39,14 @@
 ```bash
 mysql -u root -p
 source backend/src/main/resources/schema.sql
+source backend/src/main/resources/data.sql
 ```
+`data.sql` 含演示数据，可重复执行（使用 `INSERT IGNORE`）。
+演示账号（密码均为 `123456`）：
+- `student@ailearn.com`（学生）
+- `teacher@ailearn.com`（教师）
+- `admin@ailearn.com`（管理员）
+
 修改 `backend/src/main/resources/application.yml` 中的数据库连接信息。
 
 ### 2. 启动后端
