@@ -32,6 +32,21 @@ public class SecurityConfig {
             "/v3/api-docs/**"
     };
 
+    // 公开可读资源（无需登录即可浏览）
+    private static final String[] PUBLIC_GET = {
+            "/courses",
+            "/courses/**",
+            "/questions/categories",
+            "/questions/tags",
+            "/discussions",
+            "/discussions/**",
+            "/announcements/**",
+            "/leaderboards/**",
+            "/badges/**",
+            "/testimonials/**",
+            "/groups/**"
+    };
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -40,6 +55,7 @@ public class SecurityConfig {
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(WHITELIST).permitAll()
+                        .requestMatchers(org.springframework.http.HttpMethod.GET, PUBLIC_GET).permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();

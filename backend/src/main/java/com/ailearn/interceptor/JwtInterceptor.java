@@ -1,7 +1,7 @@
 package com.ailearn.interceptor;
 
 import com.ailearn.common.BusinessException;
-import com.ailearn.util.JwtUtil;
+import com.ailearn.security.JwtUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

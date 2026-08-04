@@ -579,7 +579,7 @@ CREATE TABLE leaderboards (
   user_id BIGINT,
   period VARCHAR(20),
   total_score INT,
-  rank INT,
+  ranking INT,
   study_minutes INT,
   completed_lessons INT,
   created_at DATETIME,

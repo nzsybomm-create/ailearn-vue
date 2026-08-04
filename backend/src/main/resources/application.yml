@@ -6,11 +6,18 @@ server:
 spring:
   application:
     name: ailearn-vue-backend
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+      encoding: UTF-8
+      separator: ";"
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/ailearn?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
     username: root
-    password: root
+    password: 123456
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: Asia/Shanghai
@@ -27,6 +34,8 @@ mybatis-plus:
       logic-not-delete-value: 0
 
 ailearn:
+  cors:
+    origins: "http://localhost:5173"
   jwt:
     secret: change-me-to-a-long-secret-key-at-least-256-bits
     expiration: 86400000
